@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Boto Photo Studio HTML Template">
+	<meta name="keywords" content="photo, html">
+    <title>Mahmoud AboElnaga</title>
+    <link rel="icon" href="{% static 'img/author_image1.jpeg' %}" type="image/icon type">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"rel="stylesheet"/>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="{% static 'boto/css/bootstrap.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'boto/css/font-awesome.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'boto/css/slicknav.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'boto/css/fresco.css' %}"/>
+
+	<!-- Main Stylesheets -->
+	<link rel="stylesheet" href="{% static 'boto/css/style.css' %}"/>
+
+	<link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}" type="text/css" /> 
+    <link rel="stylesheet" href="{% static 'css/templatemo-style.css' %}">
+
+
+</head>
+<body>
+    <video autoplay muted loop id="bg-video">
+        <source src="{% static 'video/gfp-astro-timelapse.mp4' %}" type="video/mp4">
+    </video>
+
+	<div class="page-container">
+		<div class="container-fluid">
+			<div class="row">
+			  <div class="col-xs-12">
+				<div class="cd-slider-nav">
+				  <nav class="navbar navbar-expand-lg" id="tm-nav">
+					<h1 class="ml8">
+						<span class="letters-container">
+						  <a class="navbar-brand" href="/">
+						  <span class="letters letters-left">Mahmoud</span>
+						  <span class="letters bang">AboElnaga</span>
+						</a>
+						</span>
+					</h1>
+					  <!--<img class="rounded mx-auto d-block" style="width:100%; max-width: 57px; border-radius: 100%; object-fit: cover; object-position: bottom;" src="{% static 'img/author_image1.jpeg' %}" alt="">-->
+					  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-supported-content" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					  </button>
+					  <div class="collapse navbar-collapse" id="navbar-supported-content">
+						<ul class="navbar-nav mb-2 mb-lg-0">
+						  <li class="nav-item">
+							<a class="nav-link" href="{% url 'resume:portfolio' %}">Back</a>
+							<div class="circle"></div>
+						  </li>
+						</ul>
+					  </div>
+				  </nav>
+				</div>
+			  </div>          
+			</div>        
+		  </div>      
+		<div class="mx-auto position-relative gallery-container">
+
+			<!-- About Page -->
+			{% if obj.images %}
+			<div class="d-flex justify-content-center" style="color: aliceblue;">
+				<b><u>{{obj.title}}</b></u>
+			</div>
+
+			<div class="gallery__page">
+				<div class="gallery__warp">
+					<div class="row">
+			
+						{% for i in obj.images.all %}
+						{% if i.img %}
+						<div class="col-lg-3 col-md-4 col-sm-6">
+							<a class="gallery__item fresco" href="{{ i.img.url }}" data-fresco-group="gallery">
+								<img src="{{ i.img.url }}" alt="">
+							</a>
+						</div>
+						{% endif %}
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			{% endif %}
+			<!-- About Page end -->
+		</div>
+	<!--====== Javascripts & Jquery ======-->
+
+	<script src="{% static 'boto/js/vendor/jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'boto/js/jquery.slicknav.min.js' %}"></script>
+	<script src="{% static 'boto/js/slick.min.js' %}"></script>
+	<script src="{% static 'boto/js/fresco.min.js' %}"></script>
+	<script src="{% static 'boto/js/main.js' %}"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+	<script src="{% static 'js/index.js' %}"></script>
+	<script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/slick.js' %}"></script>
+	<script src="{% static 'js/templatemo-script.js' %}"></script>
+	<script src="{% static 'lib/typed/typed.js' %}"></script>
+  
+	</body>
+</html>
