@@ -20,12 +20,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-dvky+-(e4cwd^y+rt(u&n!v-(ml1nm+bbu0e5lilgl3*3a*bqj'
+# django-insecure-dvky+-(e4cwd^y+rt(u&n!v-(ml1nm+bbu0e5lilgl3*3a*bqj
+SECRET_KEY = 'e72505ff31ba7572db995bec3091508b200eee709885b4d8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*','https://eng-mahmoud-aboelnaga.herokuapp.com']
 
 
 # Application definition
@@ -85,6 +86,7 @@ DATABASES = {
     #    'ENGINE': 'django.db.backends.sqlite3',
     #    'NAME': BASE_DIR / 'db.sqlite3',
     #}
+
     'default': {
 
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -95,7 +97,7 @@ DATABASES = {
 
         'PASSWORD': 'm1751998',
 
-        'HOST': 'localhost',
+        'HOST': '10.0.2.15',
 
         'PORT': '5432',
 
